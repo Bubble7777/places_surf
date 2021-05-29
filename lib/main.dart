@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyFirstWidget(),
+      home: MysecondWidget(),
     );
   }
 }
@@ -112,20 +112,19 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// Задание 3.6.3
-//This class (or a class that this class inherits from) is marked as '@immutable',
-// but one or more of its instance fields aren't final: MyFirstWidget._count
-// так как это stateless виджет он статический и не может изменяться динамичискии
 class MyFirstWidget extends StatelessWidget {
-  int _count = 0;
+  //int _count = 0;
+  Type getType() {
+    return this.runtimeType;
+  }
 
   @override
   Widget build(BuildContext context) {
-    _count++;
-    print('Метод build внутри виджета $_count');
+    //  _count++;
+    // print('Метод build внутри виджета $_count');
     return Container(
       child: Center(
-        child: Text('Hello'),
+        child: Text(getType().toString()), // Вывовит название MyFirstWidget
       ),
     );
   }
@@ -139,6 +138,9 @@ class MysecondWidget extends StatefulWidget {
 
 class _MysecondWidgetState extends State<MysecondWidget> {
   int _count = 0;
+  Type getType() {
+    return this.runtimeType;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -146,8 +148,22 @@ class _MysecondWidgetState extends State<MysecondWidget> {
     print('Метод build внутри виджета $_count');
     return Container(
       child: Center(
-        child: Text('Hello'),
+        child:
+            Text(getType().toString()), // выводит название виджета посередине
       ),
+    );
+  }
+}
+
+// 4 ) в эмуляторе вывод по середине текс title!
+class App extends StatelessWidget {
+  const App({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyFirstWidget(),
+      title: 'Hello Damir', //
     );
   }
 }
