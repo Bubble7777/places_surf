@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyFirstWidget(),
     );
   }
 }
@@ -108,6 +108,46 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+// Задание 3.6.3
+//This class (or a class that this class inherits from) is marked as '@immutable',
+// but one or more of its instance fields aren't final: MyFirstWidget._count
+// так как это stateless виджет он статический и не может изменяться динамичискии
+class MyFirstWidget extends StatelessWidget {
+  int _count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    _count++;
+    print('Метод build внутри виджета $_count');
+    return Container(
+      child: Center(
+        child: Text('Hello'),
+      ),
+    );
+  }
+}
+
+// так как это StatefulWidget здесь данные могу изменять динамически
+class MysecondWidget extends StatefulWidget {
+  @override
+  _MysecondWidgetState createState() => _MysecondWidgetState();
+}
+
+class _MysecondWidgetState extends State<MysecondWidget> {
+  int _count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    _count++;
+    print('Метод build внутри виджета $_count');
+    return Container(
+      child: Center(
+        child: Text('Hello'),
+      ),
     );
   }
 }
