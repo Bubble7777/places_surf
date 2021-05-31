@@ -114,9 +114,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class MyFirstWidget extends StatelessWidget {
   //int _count = 0;
-  Type getType() {
-    return this.runtimeType;
-  }
+  // String getType() {
+  //   return context.runtimeType.toString();
+  // }  // выдает ошибку потомучто context не определен
 
   @override
   Widget build(BuildContext context) {
@@ -124,8 +124,8 @@ class MyFirstWidget extends StatelessWidget {
     // print('Метод build внутри виджета $_count');
     return Container(
       child: Center(
-        child: Text(getType().toString()), // Вывовит название MyFirstWidget
-      ),
+          // child: Text(getType()),
+          ),
     );
   }
 }
@@ -138,9 +138,9 @@ class MysecondWidget extends StatefulWidget {
 
 class _MysecondWidgetState extends State<MysecondWidget> {
   int _count = 0;
-  Type getType() {
-    return this.runtimeType;
-  }
+  String getType() {
+    return context.runtimeType.toString();
+  } //  все сработало так как в state есть BuildContext get context, выводит StatefulElement
 
   @override
   Widget build(BuildContext context) {
@@ -148,8 +148,7 @@ class _MysecondWidgetState extends State<MysecondWidget> {
     print('Метод build внутри виджета $_count');
     return Container(
       child: Center(
-        child:
-            Text(getType().toString()), // выводит название виджета посередине
+        child: Text(getType()),
       ),
     );
   }
