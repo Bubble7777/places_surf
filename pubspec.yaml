@@ -33,6 +33,7 @@ flutter:
 
   assets:
     - res/assets/
+    - res/assets/icons/
 
  
 
