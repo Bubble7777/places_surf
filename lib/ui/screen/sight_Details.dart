@@ -85,7 +85,6 @@ class SightDetails extends StatelessWidget {
               child: Text(
                 '''Пряный вкус радостной жизни вместе с шеф-поваром Изо Дзандзава, благодаря которой у гостей ресторана есть возможность выбирать из двух направлений: европейского и восточного''',
                 style: TextStyle(
-                    height: 1.2,
                     color: Color(0xFF3B3E5B),
                     fontFamily: 'Roboto-Regular',
                     fontStyle: FontStyle.normal,
