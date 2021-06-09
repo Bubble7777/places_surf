@@ -18,7 +18,25 @@ class SightDetails extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 360,
-                color: Colors.black,
+                child: Image.network(
+                  'https://i.pinimg.com/originals/48/c9/d8/48c9d87b49c260322e54c550905f5b58.jpg',
+                  width: 328,
+                  fit: BoxFit.fill,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent loadingProgress) {
+                    if (loadingProgress == null) {
+                      return child;
+                    }
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                                loadingProgress.expectedTotalBytes
+                            : null,
+                      ),
+                    );
+                  },
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 36, left: 16),
