@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/screen/sight_Details.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
+import 'package:places/ui/screen/visiting_Screen.dart';
 
 void main() {
-  add();
   runApp(MyApp());
 }
 
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: SightDetails(),
-      // SightListScreen(),
+      //SightListScreen(),
+      //VisitingScreen(),
     );
   }
 }

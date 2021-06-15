@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
+import 'package:places/ui/screen/sight_bottomNavBar.dart';
 import 'package:places/ui/screen/sight_card.dart';
+//import 'package:places/res/text_style.dart';
 
 class SightListScreen extends StatefulWidget {
   @override
@@ -22,16 +24,14 @@ class _SightListScreenState extends State<SightListScreen> {
             padding: EdgeInsets.only(
               right: 64,
             ),
-            child: Text(
-              'Список \nинтересных мест',
-              style: TextStyle(
-                  height: 1.12,
-                  color: Color(0xFF3B3E5B),
-                  fontSize: 32,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Roboto-Regular'),
-            ),
+            child: Text('Список \nинтересных мест',
+                style: TextStyle(
+                    height: 1.12,
+                    color: Colors.black,
+                    fontSize: 32,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Roboto-Regular')),
           ),
         ),
       ),
@@ -47,6 +47,7 @@ class _SightListScreenState extends State<SightListScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 

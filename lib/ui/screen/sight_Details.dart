@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:places/ui/screen/sight_bottomNavBar.dart';
 
 class SightDetails extends StatelessWidget {
   const SightDetails({
@@ -191,6 +192,7 @@ class SightDetails extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
