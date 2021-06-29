@@ -18,39 +18,25 @@ class _VisitingScreenState extends State<VisitingScreen> {
       initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
           elevation: 0,
           centerTitle: true,
           title: Text(
             'Избранное',
-            style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Roboto-Regular',
-                fontStyle: FontStyle.normal,
-                fontSize: 18,
-                fontWeight: FontWeight.bold),
+            style: Theme.of(context).primaryTextTheme.headline3,
           ),
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(56.0),
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(40),
-                color: Color(0xfff5f5f5),
-              ),
+                  borderRadius: BorderRadius.circular(40),
+                  color: Theme.of(context).accentColor),
               child: TabBar(
-                  labelStyle: TextStyle(
-                      fontSize: 14,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Roboto-Regular'),
+                  labelStyle: Theme.of(context).primaryTextTheme.subtitle2,
                   labelPadding: EdgeInsets.symmetric(horizontal: 16),
                   isScrollable: true,
-                  labelColor: Colors.white,
-                  unselectedLabelColor: Color(0xFF7C7E92),
+                  //  labelColor: Colors.white,
+                  //unselectedLabelColor: Color(0xFF7C7E92),
                   indicatorSize: TabBarIndicatorSize.tab,
-                  indicator: BoxDecoration(
-                      color: Color(0xFF3B3E5B),
-                      borderRadius: BorderRadius.circular(40.0)),
                   tabs: [
                     Tab(
                       child: Container(

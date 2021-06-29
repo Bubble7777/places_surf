@@ -11,36 +11,45 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      unselectedItemColor: Color(0xFFf5f5f5),
-      iconSize: 24.0,
-      currentIndex: 2,
-      items: [
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'res/assets/icons/list.svg',
+    return Container(
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            //  color: Color(0xFF21222C).withOpacity(0.56),
+            width: 0.8,
           ),
-          label: 'List',
         ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'res/assets/icons/map.svg',
+      ),
+      child: BottomNavigationBar(
+        iconSize: 24.0,
+        currentIndex: 2,
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icons/list.svg',
+            ),
+            label: 'List',
           ),
-          label: 'Map',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'res/assets/icons/heart_Full.svg',
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icons/map.svg',
+            ),
+            label: 'Map',
           ),
-          label: 'Heart',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'res/assets/icons/settings.svg',
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icons/heart_Full.svg',
+            ),
+            label: 'Heart',
           ),
-          label: 'Settings',
-        ),
-      ],
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icons/settings.svg',
+            ),
+            label: 'Settings',
+          ),
+        ],
+      ),
     );
   }
 }

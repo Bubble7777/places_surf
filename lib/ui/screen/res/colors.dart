@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+
+const Color lmPrimaryColor = Colors.white,
+    lmPrimaryColorBackgound = Color(0xFFF5F5F5),
+    lmPrimaryColorDark = Color(0xFF3B3E5B),
+    lmPrimaryColorGreen = Color(0xFF4CAF50),
+    lmPrimaryColorYellow = Color(0xFFFCDD3D),
+    lmPrimaryColorRed = Color(0xFFEF4343),
+    lmPrimaryColorBlue = Color(0xFF252849),
+    lmPrimaryColorGrey = Color(0xFF7C7E92),
+    lmPrimaryColorGreyWithAlpha = Color(0xFF8F7C7E92),
+    dmPrimaryColor = Colors.white,
+    dmPrimaryColorText = Colors.white,
+    dmPrimaryColorDark = Color(0xFF21222C),
+    dmPrimaryColorGreen = Color(0xFF6ADA6F),
+    dmPrimaryColorYellow = Color(0xFFFFE769),
+    dmPrimaryColorRed = Color(0xFFCF2A2A),
+    dmPrimaryColorBlack = Color(0xFF1A1A20),
+    dmPrimaryColorBlue = Color(0xFF3B3E5B),
+    dmPrimaryColorGrey = Color(0xFF7C7E92),
+    dmPrimaryColorGreyWithAlpha = Color(0xFF8F7C7E92);

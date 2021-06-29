@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:places/ui/screen/res/colors.dart';
 import 'package:places/ui/screen/sight_bottomNavBar.dart';
 
 class SightDetails extends StatelessWidget {
@@ -42,13 +43,11 @@ class SightDetails extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 36, left: 16),
                 child: FloatingActionButton(
-                  backgroundColor: Colors.white,
                   onPressed: () {},
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10.0))),
                   child: Icon(
                     Icons.keyboard_arrow_left,
-                    color: Colors.black,
                   ),
                 ),
               )
@@ -59,79 +58,52 @@ class SightDetails extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Пряности и радости',
-                  style: TextStyle(
-                    color: Color(0xFF3B3E5B),
-                    fontFamily: 'Roboto-Regular',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24.0,
-                  ),
-                ),
+                Text('Пряности и радости',
+                    style: Theme.of(context).primaryTextTheme.headline5),
                 SizedBox(
                   height: 2,
                 ),
                 Row(
                   children: [
-                    Text(
-                      'ресторан',
-                      style: TextStyle(
-                          color: Color(0xFF3B3E5B),
-                          fontFamily: 'Roboto-Regular',
-                          fontStyle: FontStyle.normal,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
-                    ),
+                    Text('ресторан',
+                        style: Theme.of(context).primaryTextTheme.subtitle2),
                     SizedBox(
                       width: 16,
                     ),
-                    Text(
-                      'закрыто до 09:00',
-                      style: TextStyle(
-                          color: Color(0xFF7C7E92),
-                          fontFamily: 'Roboto-Regular',
-                          fontStyle: FontStyle.normal,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400),
-                    ),
+                    Text('закрыто до 09:00',
+                        style: Theme.of(context).primaryTextTheme.bodyText1),
                   ],
                 ),
               ],
             ),
           ),
           Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text(
-                '''Пряный вкус радостной жизни вместе с шеф-поваром Изо Дзандзава, благодаря которой у гостей ресторана есть возможность выбирать из двух направлений: европейского и восточного''',
-                style: TextStyle(
-                    color: Color(0xFF3B3E5B),
-                    fontFamily: 'Roboto-Regular',
-                    fontStyle: FontStyle.normal,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400),
-              )),
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              '''Пряный вкус радостной жизни вместе с шеф-поваром Изо Дзандзава, благодаря которой у гостей ресторана есть возможность выбирать из двух направлений: европейского и восточного''',
+              style: Theme.of(context).primaryTextTheme.bodyText1,
+            ),
+          ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 24,
+            ),
             child: ElevatedButton.icon(
                 style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all(Size(328, 48)),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12))),
-                    backgroundColor:
-                        MaterialStateProperty.all(Color(0xFF4CAF50))),
+                  minimumSize: MaterialStateProperty.all(Size(328, 48)),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12))),
+                ),
                 onPressed: () {},
                 icon: SvgPicture.asset(
-                  'res/assets/icons/union.svg',
+                  'assets/icons/union.svg',
                   height: 22,
                   width: 20,
                 ),
                 label: Text(
                   'ПОСТРОИТЬ МАРШРУТ',
-                  style: TextStyle(
-                      fontFamily: 'Roboto-Regular',
-                      fontStyle: FontStyle.normal,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
+                  style: Theme.of(context).primaryTextTheme.subtitle2,
                 )),
           ),
           Divider(
@@ -141,51 +113,44 @@ class SightDetails extends StatelessWidget {
             height: 0.8,
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+            padding: const EdgeInsets.only(
+              top: 8,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton.icon(
-                    style: ButtonStyle(
-                        elevation: MaterialStateProperty.all(0),
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        minimumSize: MaterialStateProperty.all(Size(164, 40))),
-                    onPressed: () {},
-                    icon: SvgPicture.asset(
-                      'res/assets/icons/calendar.svg',
-                      height: 24,
-                      width: 24,
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(0),
+                    minimumSize: MaterialStateProperty.all(
+                      Size(164, 40),
                     ),
-                    label: Text(
-                      'Запланировать',
-                      style: TextStyle(
-                          color: Color(0xFF7C7E92),
-                          fontFamily: 'Roboto-Regular',
-                          fontStyle: FontStyle.normal,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400),
-                    )),
+                  ),
+                  onPressed: () {},
+                  icon: SvgPicture.asset(
+                    'assets/icons/calendar.svg',
+                    height: 24,
+                    width: 24,
+                  ),
+                  label: Text('Запланировать',
+                      style: Theme.of(context).primaryTextTheme.subtitle2),
+                ),
                 ElevatedButton.icon(
                     style: ButtonStyle(
-                        elevation: MaterialStateProperty.all(0),
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        minimumSize: MaterialStateProperty.all(Size(164, 40))),
+                      elevation: MaterialStateProperty.all(0),
+                      minimumSize: MaterialStateProperty.all(
+                        Size(164, 40),
+                      ),
+                    ),
                     onPressed: () {},
                     icon: SvgPicture.asset(
-                      'res/assets/icons/heart.svg',
+                      'assets/icons/heart.svg',
                       height: 24,
                       width: 24,
                     ),
                     label: Text(
                       'В Избранное',
-                      style: TextStyle(
-                          color: Color(0xFF3B3E5B),
-                          fontFamily: 'Roboto-Regular',
-                          fontStyle: FontStyle.normal,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400),
+                      style: Theme.of(context).primaryTextTheme.subtitle2,
                     )),
               ],
             ),

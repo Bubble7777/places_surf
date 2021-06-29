@@ -50,17 +50,12 @@ class SightCard extends StatelessWidget {
                     children: [
                       Text(
                         sight.type,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Roboto-Regular',
-                            fontStyle: FontStyle.normal,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
+                        style: Theme.of(context).primaryTextTheme.subtitle2,
                       ),
                       IconButton(
                           padding: EdgeInsets.only(bottom: 20),
                           icon: SvgPicture.asset(
-                            'res/assets/icons/heart.svg',
+                            'assets/icons/heart.svg',
                             color: Colors.white,
                             height: 20,
                             width: 18,
@@ -72,35 +67,28 @@ class SightCard extends StatelessWidget {
               ],
             )),
         Container(
-          alignment: Alignment.topLeft,
+          decoration: BoxDecoration(
+            color: Theme.of(context).backgroundColor,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(12),
+              bottomRight: Radius.circular(12),
+            ),
+          ),
+          // alignment: Alignment.topLeft,
           width: 328,
           child: Container(
             margin: EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  sight.name,
-                  maxLines: 2,
-                  style: TextStyle(
-                    fontStyle: FontStyle.normal,
-                    fontFamily: 'Roboto-Regular',
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF3B3E5B),
-                  ),
-                ),
+                Text(sight.name,
+                    maxLines: 2,
+                    style: Theme.of(context).primaryTextTheme.subtitle1),
                 ConstrainedBox(
                   constraints: BoxConstraints.expand(width: 164, height: 46),
                   child: Text(
                     sight.details,
-                    style: TextStyle(
-                      fontStyle: FontStyle.normal,
-                      fontFamily: 'Roboto-Regular',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xFF7C7E92),
-                    ),
+                    style: Theme.of(context).primaryTextTheme.bodyText1,
                   ),
                 ),
                 SizedBox(
